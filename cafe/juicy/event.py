@@ -25,6 +25,8 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
 
+from dir_manager import create_file
+
 BASE = "http://www.no1juicy.com"
 EVENT = "http://www.no1juicy.com/bbs/board/lists?bo_table=event"
 
@@ -54,7 +56,7 @@ class Event:
             img_name = img_url[img_url.rfind('/')+1:]
 
             # 이미지를 다운 받거나 img_url Db push
-            urllib.request.urlretrieve(img_url, EVENT_DIRECTORY + img_name)
+            create_file(img_url, EVENT_DIRECTORY, img_name)
 
     def title(self):
         for anchor in self.soup.select("ul.ntcList > li > a > dl > dt"):
