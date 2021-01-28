@@ -1,5 +1,5 @@
-from cafe.juicy.juicy import Juicy
+from process import Process
 
 if __name__ == "__main__":
-    juicy = Juicy()
-    juicy.crawling()
+    process = Process()
+    process.run()
