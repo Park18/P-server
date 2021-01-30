@@ -44,7 +44,7 @@ def url():
 
 def image():
     for anchor in SOUP.select("div.event_listBox > a > img"):
-        img_url = anchor.get("src")
+        img_url = anchor.get("src")[2:]
         print(img_url)
 
         # TODO: DB push
