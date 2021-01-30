@@ -29,8 +29,6 @@ from dir_manager import create_file
 BASE = "http://www.gong-cha.co.kr"
 EVENT = "http://www.gong-cha.co.kr/brand/board/event.php?status=ing"
 
-EVENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__)) + '/event/'
-
 class Event:
     def __init__(self):
         self.response = urlopen(EVENT)
@@ -52,10 +50,9 @@ class Event:
     def image(self):
         for anchor in self.soup.select("div.imgs > a > img"):
             img_url = BASE + anchor.get("src")
-            img_name = img_url[img_url.rfind('/')+1:]
+            print(img_url)
 
-            # 이미지를 다운 받거나 img_url Db push
-            create_file(img_url, EVENT_DIRECTORY, img_name)
+            # TODO: DB push
 
     def title(self):
         for anchor in self.soup.select("p.tit"):
