@@ -18,51 +18,45 @@
 #   - 추출한 이미지를 저장해야 하는가 이미지 url을 이용해야 하는가 
 ###############################################################
 
-import os # 실행 위치
-
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
 
-from dir_manager import create_file
-
 BASE = "http://www.gong-cha.co.kr"
 EVENT = "http://www.gong-cha.co.kr/brand/board/event.php?status=ing"
 
-class Event:
-    def __init__(self):
-        self.response = urlopen(EVENT)
-        self.soup = BeautifulSoup(self.response, 'html.parser')
+RESPONSE = urlopen(EVENT)
+SOUP = BeautifulSoup(RESPONSE, 'html.parser')
 
-    def crawling(self):
-        self.url()
-        self.image()
-        self.title()
-        self.date()
+def crawling():
+    url()
+    image()
+    title()
+    date()
 
-    def url(self):
-        for anchor  in self.soup.select("div.imgs > a"):
-            # 테스트
-            print(anchor.get("href"))
+def url():
+    for anchor  in SOUP.select("div.imgs > a"):
+        # 테스트
+        print(anchor.get("href"))
 
-            # TODO: DB push
+        # TODO: DB push
 
-    def image(self):
-        for anchor in self.soup.select("div.imgs > a > img"):
-            img_url = BASE + anchor.get("src")
-            print(img_url)
+def image():
+    for anchor in SOUP.select("div.imgs > a > img"):
+        img_url = BASE + anchor.get("src")
+        print(img_url)
 
-            # TODO: DB push
+        # TODO: DB push
 
-    def title(self):
-        for anchor in self.soup.select("p.tit"):
-            print(anchor.get_text())
+def title():
+    for anchor in SOUP.select("p.tit"):
+        print(anchor.get_text())
 
-            # TODO: DB push
+        # TODO: DB push
 
-    def date(self):
-        # TODO: 기간이 존재하지 않은 이벤트가 있기 때문에 순서의 오류 발생 가능
-        for anchor in self.soup.select("p.date"):
-            print(anchor.get_text())
+def date():
+    # TODO: 기간이 존재하지 않은 이벤트가 있기 때문에 순서의 오류 발생 가능
+    for anchor in SOUP.select("p.date"):
+        print(anchor.get_text())
 
-            # TODO: DB push
+        # TODO: DB push

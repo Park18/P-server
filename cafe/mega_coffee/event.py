@@ -22,31 +22,29 @@ import urllib.request
 
 EVENT = "http://www.megacoffee.me/bbs/board.php?bo_table=event"
 
-class Event:
-    def __init__(self):
-        self.response = urlopen(EVENT)
-        self.soup = BeautifulSoup(self.response, 'html.parser')
+RESPONSE = urlopen(EVENT)
+SOUP = BeautifulSoup(RESPONSE, 'html.parser')
 
-    def crawling(self):
-        self.url()
-        self.title()
-        self.date()
+def crawling():
+    url()
+    title()
+    date()
 
-    def url(self):
-        for anchor  in self.soup.select("td.td_subject > a"):
-            # 테스트
-            print(anchor.get("href"))
+def url():
+    for anchor  in SOUP.select("td.td_subject > a"):
+        # 테스트
+        print(anchor.get("href"))
 
-            # TODO: DB push
+        # TODO: DB push
 
-    def title(self):
-        for anchor in self.soup.select("td.td_subject > a"):
-            print(anchor.get_text().strip())
+def title():
+    for anchor in SOUP.select("td.td_subject > a"):
+        print(anchor.get_text().strip())
 
-            # TODO: DB push
+        # TODO: DB push
 
-    def date(self):
-        for anchor in self.soup.select("td.td_date"):
-            print(anchor.get_text())
+def date():
+    for anchor in SOUP.select("td.td_date"):
+        print(anchor.get_text())
 
-            # TODO: DB push
+        # TODO: DB push
