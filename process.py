@@ -1,14 +1,16 @@
-from cafe.juicy.juicy import Juicy
-from cafe.mega_coffee.mega_coffee import Mega_Coffee
-from cafe.paikdabang.paikdabang import Paikdabang
+import cafe.juicy.juicy as juciy
+import cafe.gong_cha.gong_cha as gong_cha
+import cafe.paikdabang.paikdabang as paikdabang
+import cafe.mega_coffee.mega_coffee as mega_coffee
+import cafe.hollys.hollys as hollys
+import cafe.angel_in_us.angel_in_us as angel_in_us
+import cafe.tom_n_toms.tom_n_toms as tom_n_toms
 
-class Process:
-    def __init__(self):
-        self.juciy = Juicy()
-        self.mega_coffee = Mega_Coffee()
-        self.paikdabang = Paikdabang()
-
-    def run(self):
-        self.juciy.crawling()
-        self.mega_coffee.crawling()
-        self.paikdabang.crawling()
+def run():
+    juciy.crawling()
+    gong_cha.crawling()
+    paikdabang.crawling()
+    mega_coffee.crawling()
+    hollys.crawling()       # url 크롤링 실패
+    angel_in_us.crawling()  # url 크롤링 실패
+    tom_n_toms.crawling()
