@@ -19,8 +19,6 @@
 #   - 추출한 이미지를 저장해야 하는가 이미지 url을 이용해야 하는가 
 ###############################################################
 
-import os # 실행 위치
-
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request

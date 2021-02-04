@@ -37,7 +37,7 @@ def crawling():
 def url():
     for anchor  in SOUP.select("div.imgs > a"):
         # 테스트
-        print(anchor.get("href"))
+        print(BASE + anchor.get("href"))
 
         # TODO: DB push
 

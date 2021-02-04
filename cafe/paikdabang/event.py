@@ -8,9 +8,9 @@
 #   - 등록일
 #
 # 이벤트 크롤링 관련 정보
-#   - 이벤트 게시판 1페이지: http://www.megacoffee.me/bbs/board.php?bo_table=event
-#   - 이벤트 게시판 2페이지: http://www.megacoffee.me/bbs/board.php?bo_table=event&page=2
-#   - 이벤트 url: http://www.megacoffee.me/bbs/board.php?bo_table=event&wr_id=307
+#   - 이벤트 게시판 1페이지: http://paikdabang.com/news/?cate=event
+#   - 이벤트 게시판 2페이지: http://paikdabang.com/news/page/2/?cate=event
+#   - 이벤트 url: http://paikdabang.com/post_news/%eb%b9%bd%eb%8b%a4%eb%b0%a9%eb%a9%a4%eb%b2%84%ec%8b%ad-%eb%8d%94-%ea%b0%95%eb%a0%a5%ed%95%b4%ec%a7%84-%ea%bd%9d%ec%97%86%eb%8a%94-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ec%b0%b8%ec%97%ac%ed%95%98/
 #   
 # TODO
 #   - DB 선택 및 추출한 데이터 DB에 넣는 처리
