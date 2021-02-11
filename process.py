@@ -5,6 +5,7 @@ import cafe.mega_coffee.mega_coffee as mega_coffee
 import cafe.hollys.hollys as hollys
 import cafe.angel_in_us.angel_in_us as angel_in_us
 import cafe.tom_n_toms.tom_n_toms as tom_n_toms
+import cafe.a_twosome_place.a_twosome_place as a_twosome_place
 
 def run():
     juciy.crawling()
@@ -14,3 +15,4 @@ def run():
     hollys.crawling()       # url 크롤링 실패
     angel_in_us.crawling()  # url 크롤링 실패
     tom_n_toms.crawling()
+    a_twosome_place.crawling()
