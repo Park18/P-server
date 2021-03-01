@@ -11,14 +11,12 @@
 # 이벤트 크롤링 관련 정보
 #   - 이벤트 게시판 1페이지: https://www.angelinus.com/Event/Event_List.asp
 #   - 이벤트 url: https://www.angelinus.com/Event/Event_View.asp?Mode=VIEW&EventType=Event&Idx=689&SearchEventGubun=0
-#   - 이벤트 사진: http://admin.hollys.co.kr/upload/news/event/newsEvent_202101110141114930.jpg
+#   - 이벤트 사진: https://www.angelinus.com/Data/Event/EventImage690.jpg
 #
 # TODO
 #   - DB 선택 및 추출한 데이터 DB에 넣는 처리
 #   - 추출한 이미지를 저장해야 하는가 이미지 url을 이용해야 하는가 
 ###############################################################
-
-import os # 실행 위치
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
@@ -26,7 +24,7 @@ import urllib.request
 
 from dir_manager import create_file
 
-BASE = "https://www.angelinus.com/"
+BASE = "https://www.angelinus.com"
 EVENT = "https://www.angelinus.com/Event/Event_List.asp"
 
 RESPONSE = urlopen(EVENT)
@@ -39,7 +37,7 @@ def crawling():
     date()
 
 def url():
-    # TODO: 링크가 자바스크립트로 실행됨
+    # TODO: 인벤트 url이 자바스크립트로 작동함
     for anchor  in SOUP.select("div.event_listBox > a"):
         # 테스트
         print(anchor.get("onclick"))

@@ -29,13 +29,13 @@ RESPONSE = urlopen(EVENT)
 SOUP = BeautifulSoup(RESPONSE, 'html.parser')
 
 def crawling():
-    url() # TODO: url 얻기 실패
+    # url()
     image()
     title()
     date()
 
 def url():
-    # TODO: 링크가 자바스크립트로 실행됨
+    # TODO: 인벤트 url이 자바스크립트로 작동함
     for anchor  in SOUP.select("div.event_listBox > a"):
         # 테스트
         print(anchor.get("onclick"))

@@ -23,8 +23,6 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
 
-from dir_manager import create_file
-
 BASE = "http://www.no1juicy.com"
 EVENT = "http://www.no1juicy.com/bbs/board/lists?bo_table=event"
 
